@@ -1,0 +1,20 @@
+﻿conformityManager
+
+
+winexe
+C#
+.cs
+C:\Users\PREDATOR\Documents\Workspace\Visual Studio\conformityManager\conformityManager\obj\Release\
+conformityManager
+none
+false
+TRACE
+C:\Users\PREDATOR\Documents\Workspace\Visual Studio\conformityManager\conformityManager\App.xaml
+16-1871560311
+1-1118573714
+381117788562
+23-1198795255
+MainWindow.xaml;Pages\Forms\NcFullDetailPage.xaml;Pages\Forms\UserFormPage.xaml;Pages\MainPages\AdminPage.xaml;Pages\MainPages\LoginPage.xaml;Pages\Forms\NcFileFormPage.xaml;Pages\Forms\NcFixFormPage.xaml;Pages\Other\ImageViewerPage.xaml;Pages\Forms\NcDetailPage.xaml;Pages\Other\ZoomPicPage.xaml;Pages\SubPages\LogPage.xaml;Pages\SubPages\NcManagementPage.xaml;Pages\Forms\NonConformityListPage.xaml;Pages\Other\PickPage.xaml;Pages\MainPages\UserPage.xaml;Pages\SubPages\UserManagementPage.xaml;
+
+False
+

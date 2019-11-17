@@ -1,0 +1,194 @@
+﻿<Page x:Class="conformityManager.Pages.UserPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserPage" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+    <Page.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BurgerMenu" >
+                <EasingDoubleKeyFrame KeyTime="0" Value="54"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="260"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="BurgerMenu" >
+                <EasingDoubleKeyFrame KeyTime="0" Value="260"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="54"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+
+    <!--Page.Triggers>
+        <EventTrigger RoutedEvent="CheckBox.Checked" SourceName="NavToggle">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="CheckBox.Unchecked" SourceName="NavToggle">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Page.Triggers-->
+
+
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FFF5F4F5">
+        
+
+            
+        <DockPanel ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Stretch">
+
+            <materialDesign:ColorZone DockPanel.Dock="Top" Mode="PrimaryDark" Padding="8" materialDesign:ShadowAssist.ShadowDepth="Depth0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="54">
+                <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../Ressources/Images/EnccLogo.png" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="100" MaxWidth="100" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                        <TextBlock Text=" Gestion de non-conformité" Style="{StaticResource MaterialDesignSubheadingTextBlock}" VerticalAlignment="Center" Margin="4 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <StackPanel>
+                            <TextBlock Name="UserFullNameTxt" Text="User Full Name" Style="{StaticResource MaterialDesignTitleTextBlock}" VerticalAlignment="Center" Margin="16 0 0 0" HorizontalAlignment="Center"/>
+                            <TextBlock Name="UserJobTxt" Text="User Job Title" Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" Margin="16 0 0 0" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <Button Click="LogOut"
+                                    Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="20,0,0,0" Height="Auto">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Deconnecter" Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <materialDesign:PackIcon Kind="Logout" Margin="2,0,0,0" Width="30" Height="30"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:ColorZone>
+
+
+
+
+            <!--<materialDesign:DialogHost x:Name="NewFormDialog" IsOpen="false" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+        --><!-- NcFile Dialog Content --><!--
+        <materialDesign:DialogHost.DialogContent>
+            <Frame x:Name="NcFileFormFrame" NavigationUIVisibility="Hidden" />
+        </materialDesign:DialogHost.DialogContent>
+        --><!-- /NcFile Dialog Content --><!--
+        <materialDesign:DialogHost x:Name="DeleateDialog" IsOpen="false" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            --><!-- Remove Dialog Content --><!--
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel>
+                    <TextBlock Margin="20"> 
+                        Etes vous sure ?
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Click="ConfirmRemoveNcFile"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                    Width="100"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            Confirmer
+                        </Button>
+                        <Button 
+                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                    Width="100"
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                            Annuler
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>-->
+            <!-- /Remove Dialog Content -->
+
+            <!-- CONTENT -->
+
+            <!--DockPanel Margin="0,26,0,0">
+                <DockPanel DockPanel.Dock="Top">
+                    <materialDesign:Card DockPanel.Dock="Right"
+                                        materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Margin="0,0,40,0">
+                        <StackPanel Orientation="Horizontal" Margin="0">
+                            <RadioButton
+                                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                                        Margin="4"
+                                        IsChecked="True"
+                                        Content="Qualités" Click="SwitchToQuality" />
+                            <RadioButton
+                                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                                        Margin="4"
+                                        IsChecked="False"
+                                        Content="HSE" Click="SwitchToHSE"/>
+                        </StackPanel>
+                    </materialDesign:Card>
+
+
+                    <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" Margin="4">
+                        <Button  Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                         
+                                                    Click="ShowNewNcForm"
+                                                    ToolTip="Cree une nouvelle affaire de non conformite" 
+                                                    Margin="6,0,0,0" Padding="4,2">
+                            Nouvelle affaire qualité
+                        </Button>
+                        <Button  Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="6,0,0,0" Padding="4,2">
+                            Supprimer selection
+                        </Button>
+                    </StackPanel>
+                </DockPanel>
+
+                <materialDesign:Card VerticalAlignment="Stretch" Margin="10,0,10,10">
+                    <materialDesign:Transitioner  x:Name="MainTransitioner" SelectedIndex="0" AutoApplyTransitionOrigins="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+
+                        <materialDesign:TransitionerSlide>
+                            <materialDesign:TransitionerSlide.ForwardWipe>
+                                <materialDesign:SlideWipe Direction="Left"/>
+                            </materialDesign:TransitionerSlide.ForwardWipe>
+                            <materialDesign:TransitionerSlide.BackwardWipe>
+                                <materialDesign:SlideWipe Direction="Left"/>
+                            </materialDesign:TransitionerSlide.BackwardWipe>
+                            <Frame x:Name="QualityFrame" NavigationUIVisibility="Hidden" />
+                        </materialDesign:TransitionerSlide>
+
+                        <materialDesign:TransitionerSlide>
+                            <materialDesign:TransitionerSlide.ForwardWipe>
+                                <materialDesign:SlideWipe Direction="Right"/>
+                            </materialDesign:TransitionerSlide.ForwardWipe>
+                            <materialDesign:TransitionerSlide.BackwardWipe>
+                                <materialDesign:SlideWipe Direction="Right"/>
+                            </materialDesign:TransitionerSlide.BackwardWipe>
+                            <Frame x:Name="HseFrame" NavigationUIVisibility="Hidden" />
+                        </materialDesign:TransitionerSlide>
+
+                    </materialDesign:Transitioner>
+
+                </materialDesign:Card>
+
+
+
+            </DockPanel-->
+
+            <Frame x:Name="NcManagementFrame" NavigationUIVisibility="Hidden"/>
+
+
+            <!-- /CONTENT -->
+        <!--</materialDesign:DialogHost>
+        --><!-- /CONTENT --><!--
+    </materialDesign:DialogHost>-->
+
+
+
+        </DockPanel>
+                
+        
+    </Grid>
+
+
+
+</Page>
+
